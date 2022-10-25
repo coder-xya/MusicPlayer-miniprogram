@@ -1,0 +1,16 @@
+<!-- components/video-items.wxml -->
+<wxs module="filter" src="../../utils/formort.wxs"></wxs>
+
+    <view class="item">
+        <view class="album">
+            <image class="image" src="{{item.cover}}" mode="widthFix"></image>
+            <view class="info">
+                <view class="count">{{filter.formortCount(item.playCount)}}</view>
+                <view class="duration">{{filter.formortDuration(item.duration)}}</view>
+                <!-- <view class="duration">{{filter.formortDuration(item.mv.videos[0].duration)}}</view> -->
+            </view>
+        </view>
+        <view class="content">{{item.name}} - {{item.artistName}}</view>
+    </view>
+
+

@@ -1,0 +1,20 @@
+/**app.wxss**/
+page {
+    background-color: #fafafa;
+    box-sizing: border-box;
+  }
+.van-search {
+    padding: 10px 0 !important;
+  }
+.van-search__content {
+    background-color: #fff !important;
+  }
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 

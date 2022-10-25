@@ -1,0 +1,164 @@
+/* pages/song-player/index.wxss */
+page{
+    color: #fff;
+}
+
+/* 背景 */
+ .bg-image,.bg-cover{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+ .bg-cover{
+  background-color: rgba(0,0,0,.5);
+  backdrop-filter: blur(30px);
+}
+
+/* 自定义导航 */
+  .tab {
+    display: flex;
+    font-size: 28rpx;
+    color: #999;
+  }
+  
+  .tab .divider {
+    margin: 0 10rpx;
+    color: #999;
+  }
+  
+  .tab .active {
+    color: #fff;
+  }
+  
+  /* 内容 */
+  .content {
+    color: #fff;
+  }
+  .content .music {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 30rpx 60rpx;
+  }
+
+  /* 封面 */
+  .album {
+    display: flex;
+    align-items: center;
+    flex: 5;
+  }
+  .album .image {
+    width: 100%;
+    height: 100%;
+    border-radius: 12rpx;
+  }
+
+  /* 歌曲信息 */
+  .music .info {
+    margin: 20rpx 0;
+  }
+  .music .info .title {
+    font-size: 48rpx;
+    font-weight: 700;
+  }
+  .music .info .singer, .music .info .alias {
+    font-size: 26rpx;
+    color: #ccc;
+    margin: 16rpx 0;
+  }
+
+    /* 进度 */
+  .progress {
+    margin: 10rpx 0;
+  }
+  
+  .slider {
+    margin: 0 0 18rpx 20rpx;
+  }
+  
+  .time {
+    display: flex;
+    justify-content: space-between;
+    color: #ccc;
+    font-size: 22rpx;
+  }
+  .time .current {
+    margin-left: 10rpx;
+  }
+  
+  /* 操作按钮 */
+  .operation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20rpx 0 30rpx;
+  }
+  .operation .btn {
+    display: inline-block;
+    width: 60rpx;
+    height: 60rpx;
+    padding: 0;
+  }
+  
+  .operation .btn-mode {
+    width: 80rpx;
+    height: 80rpx;
+  }
+  
+  .operation .btn-pause {
+    width: 130rpx;
+    height: 130rpx;
+  }
+
+  /* 歌词页面 */
+.lyric-list {
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+  }
+  
+  .lyric-list .item {
+    height: 35px;
+    line-height: 35px;
+    font-size: 28rpx;
+    text-align: center;
+    color: #989898;
+  
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .lyric-list .item.active {
+    color: #26ce8a;
+    font-size: 36rpx;
+  }
+  
+  /* 弹出层 */
+
+  /* .customStyle{
+    width: 100%;
+    height: 1000rpx;
+  } */
+  .songList{
+    width: 100%;
+    height: 860rpx;
+    /* min-height: 300px; */
+    overflow-y: auto;
+    background:#929292;
+  }
+  .listNav{
+    margin-top: 10rpx;
+    margin-left: 20rpx;
+    height: 88rpx;
+  }

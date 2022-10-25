@@ -1,0 +1,36 @@
+{
+    "pages": [
+        "pages/home-music/index",
+        "pages/home-video/index",
+        "pages/video-detail/index",
+        "pages/song-detail/index",
+        "pages/music-search/index",
+        "pages/song-player/index"
+    ],
+    "entryPagePath": "pages/home-music/index",
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/home-music/index",
+                "text": "音乐",
+                "iconPath": "./images/tabbar/music_normal.png",
+                "selectedIconPath": "./images/tabbar/music_active.png"
+            },
+            {
+                "pagePath": "pages/home-video/index",
+                "text": "视频",
+                "iconPath": "./images/tabbar/video_normal.png",
+                "selectedIconPath": "./images/tabbar/video_active.png"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WYY音乐",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents"
+}

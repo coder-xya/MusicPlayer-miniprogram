@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "music-areaheader":"../../components/area-header/index",
+        "video-related-list":"../../components/video-related-list/index"
+    }
+}

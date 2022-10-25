@@ -1,0 +1,22 @@
+<!--pages/home-video-detail/index.wxml-->
+<video class="video" autoplay src="{{mvsaddress.url}}"></video>
+
+<wxs src="../../utils/formort.wxs" module="formort"></wxs>
+
+<view class="info">
+  <view class="title">{{ mvsdata.name }}</view>
+  <view class="desc">{{ mvsdata.artistName }} - {{ mvsdata.alias[0] }}</view>
+  <view class="other">
+    <text class="play-count">{{formort.formortCount(mvsdata.playCount)}}次播放 - </text>
+    <text class="publish-time">{{mvsdata.publishTime}}</text>
+  </view>
+</view>
+
+<view class="recommend">
+  <view class="title">推荐视频</view>
+  <view class="video-list">
+    <block wx:for="{{mvsrelated}}" wx:key="vid">
+      <video-related-list itemInfo="{{item}}"></video-related-list>
+    </block>
+  </view>
+</view>

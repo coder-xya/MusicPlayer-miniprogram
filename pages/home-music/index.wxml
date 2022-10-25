@@ -1,0 +1,91 @@
+<!--pages/home-music/index.wxml-->
+<!-- 搜索框 -->
+<van-search 
+disabled
+shape="round" 
+background="#fafafa"
+placeholder="请输入搜索关键词" 
+bind:click-input="handleSearchClick"
+/>
+<!-- 轮播图 -->
+<swiper class="swiper" 	indicator-dots 	indicator-active-color="pink" autoplay circular>
+    <swiper-item wx:for="{{banners}}" wx:key="bannerId">
+    <image 
+    class="image"  
+    src="{{item.pic}}" 
+    bindtap="bannersItemClick" 
+    data-id="{{item.bannerId}}"
+    ></image>
+    </swiper-item>
+</swiper>
+<!-- 歌曲最新推荐 -->
+<view>
+    <area-header title="最新推荐" rightText="更多" showRight="true" bind:click="handleMoreSongsClick"></area-header>
+    <block wx:for="{{newMusicRecommended}}" wx:key="id">
+      <song-item-v1
+       item="{{item}}"
+       bindtap="handleSongItemClick"
+       data-index="{{index}}"
+       ></song-item-v1>
+    </block>
+</view>
+<!-- 推荐歌单 -->
+<song-menu-v1 
+title="推荐歌单" 
+songMenu="{{musicMenuRecommended}}" 
+wx:if="{{musicMenuRecommended.length>0}}">
+</song-menu-v1>
+<!-- 排行榜 -->
+<view class="ranking">
+  <area-header title="排行榜" showRight="{{false}}"></area-header>
+  <view class="ranking-list">
+    <block wx:for="{{musicRankings}}" wx:key="id">
+      <ranking-area-item item="{{item}}" bindtap="handleRankingItemClick" data-id="{{item.id}}" data-name="{{item.name}}"></ranking-area-item>
+    </block>
+  </view>
+</view>
+
+<!-- 播放工具栏 -->
+<view class="play-bar-placeholder" wx:if="{{currentSong.id}}"></view>
+<view class="play-bar" wx:if="{{currentSong.id}}">
+  <view class="left">
+    <image
+           bindtap="handlePlayBarClick"    
+           class="album album-anim" 
+           style="animation-play-state: {{playAnimState}};"
+           mode="aspectFill" 
+           src="{{currentSong.al.picUrl}}"></image>
+    <view class="name">{{currentSong.name}}</view>
+  </view>
+  <view class="right">
+    <image class="icon play" 
+           src="../../images/music/{{ isPlaying ? 'pause': 'play' }}_icon.png"
+           bindtap="handlePlayBtnClick"></image>
+    <image 
+    class="icon playlist" 
+    src="../../images/music/playlist_icon.png"
+    bindtap="popupShow"></image>
+  </view>
+</view>
+<!-- 弹出层 -->
+
+<page-container 
+  custom-style = customStyle
+  show = "{{isPopupShow}}"
+  duration = "{{500}}"
+>
+  <view class="songList">
+    <view class="listNav">
+      <area-header title="歌曲列表" showRight="{{false}}"></area-header>
+    </view>
+    <view >
+      <block wx:for="{{playListSongs}}" wx:key="id">
+        <song-item-v2 
+        item="{{item}}" 
+        index="{{index+1}}"
+        >
+    </song-item-v2>
+  </block>
+    </view>
+  </view>
+</page-container>
